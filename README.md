@@ -14,8 +14,16 @@ Finally, I'm using by default ehcache-ee version 2.7.2 (and relted terracotta-to
 
 Steps:
  - Build, Package, and Generate the run scripts. 2 profiles created: "small" (default, with smaller JVM memory footprint) and "large" (to test with large dataset and memory environments):
- -- mvn clean package appassembler:assemble (use the default "small" profile)
- -- mvn clean package appassembler:assemble -P large
+		mvn clean package appassembler:assemble (use the default "small" profile)
+
+		mvn clean package appassembler:assemble -P large
  - Run based on platform:
- -- Linux/OSX/UNIX: sh target/appassembler/bin/LaunchLoader-Standalone <object count> (for standlone ehcache - BigMemory Go) or sh target/appassembler/bin/LaunchLoader-Distributed <object count> (for distributed ehcache - BigMemoryMax)
- -- Windows: target/appassembler/bin/LaunchLoader-Standalone.bat <object count> (for standlone ehcache - BigMemory Go) or sh target/appassembler/bin/LaunchLoader-Distributed.bat <object count> (for distributed ehcache - BigMemoryMax)
+		Linux/OSX/UNIX: 
+		sh target/appassembler/bin/LaunchLoader-Standalone <object count> (for standlone ehcache - BigMemory Go)
+		or
+		sh target/appassembler/bin/LaunchLoader-Distributed <object count> (for distributed ehcache - BigMemoryMax)
+		
+		Windows: 
+		target/appassembler/bin/LaunchLoader-Standalone.bat <object count> (for standlone ehcache - BigMemory Go)
+		or
+		sh target/appassembler/bin/LaunchLoader-Distributed.bat <object count> (for distributed ehcache - BigMemoryMax)
